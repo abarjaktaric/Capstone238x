@@ -1,0 +1,38 @@
+@media (min-width: 576px) { 
+  .contact-page{
+    margin-top: 40px;
+  }
+  .contact-info{
+    margin-top: 3.750rem;
+  }
+  .contact-info h2{
+    padding-bottom: 1.875rem;
+    text-transform: uppercase;
+  }
+  .contact-info img{
+    padding-bottom: 1.250rem;
+  }
+  .contact-info div{
+    padding-bottom: 0.625rem;
+  }
+  .contact-info span{
+    text-transform: uppercase;
+    color:#54504c;;
+    font-size: 0.8rem;
+  }
+  .contact-info a{
+    color:#f48a18;
+  }
+  .contact-info a:hover{
+    color:#a19f9d;
+  }
+}
+@media (min-width: 992px) { 
+  .contact-info{
+    margin-top: 7.000rem;
+    padding-left: 1.250rem;
+    margin-left: 0.625rem;
+    border-left: 1px solid #ededed;
+    padding-bottom: 1.875rem;
+  }
+}

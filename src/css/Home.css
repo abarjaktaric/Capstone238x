@@ -1,0 +1,72 @@
+.home-page{
+  margin-top: 40px;
+}
+.home-page .btn{
+  margin-top: 0.625rem;
+  display: inline-block;
+}
+.carousel{
+  position: relative;
+  margin-bottom: 3.750rem;
+}
+.carousel-container{
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  height: 500px;     
+}
+.carousel-wrapper{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  transition: transform 800ms cubic-bezier(0.45, 0.00, 0.58, 0.95);
+}
+.carousel-slide{
+  height: 500px;
+  background:#ededed;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+ .carousel-slide a{
+  width: 100%;
+  display: block;
+  height: 500px;
+  transition: ease 0.2s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel-slide a:hover{
+  opacity: 0.7;
+}
+.arrows{
+  border: none;
+  background: #00000082;
+  color: #fff;
+  padding: 0.313rem 0.625rem;
+  position: absolute;
+  border-radius: 2px;
+  font-size: 2.500rem;
+  transition: ease 0.2s;
+  top: 50%;
+  margin-top: -1.750rem;
+}
+.arrows:hover{
+  background: #000000b5;
+}
+.arrows#left{
+  left: 6%
+}
+.arrows#right{
+  right: 6%; 
+}
+.carousel-toggle{
+  padding-top: 1.250rem;
+}
+.carousel-toggle input{
+  vertical-align: middle;
+  margin-right: 0.375rem;
+}

@@ -1,0 +1,122 @@
+@media (min-width: 576px) { 
+  .controls-bar{
+    background: #ededed;
+    padding: 1.875rem 1.250rem;
+    margin: 1.875rem 0;
+  }
+  .controls-bar h3{
+    display: inline-block;
+  }
+  .controls-bar span{
+    padding: 0 0.625rem;
+    font-size: 0.750rem;
+  }
+  .controls-bar .products-filter{
+    display: block;
+  }
+  .controls-bar .products-instock{
+    margin-right: 0;
+    padding-bottom: 0.833rem;
+  }
+  .controls-bar .products-instock label{
+    vertical-align: sub;
+  }
+  .controls-bar .products-instock input{
+    vertical-align: middle;
+    margin: 0 0.833rem;
+  }
+  .controls-bar .products-sort select{
+    box-sizing: border-box;
+    border: 2px solid #ededed;
+  }
+  .controls-bar .products-sort select:focus{
+    border: 2px solid #ffc688;
+    outline: none;
+  }
+  .category-menu{
+    margin-right: 0.625rem;
+  }
+  .category-menu button{
+    text-transform:uppercase;
+    background: #ffc688;
+    color:#fff;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0.625rem;
+    font-weight: bold;
+    transition: ease 0.2s;
+  }
+  .category-menu button:hover{
+    background: #f48a18;
+  }
+  .category-menu .dropdown-content{
+    display: none;
+    list-style: none;
+    padding-left: 0.625rem;
+  }
+  .category-menu .dropdown-content li{
+    padding: 0.625rem 0;
+    cursor: pointer;
+  }  
+  .category-menu .dropdown-content li:hover{
+    color: #f48a18;
+  }
+  .item{
+    border: 2px solid #ededed;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding:1.667rem 1.250rem 0.417em 1.250rem;
+    margin-bottom: 1.667rem;
+    height: 250px;
+    }
+  .item .item-image{
+    display: block;
+    margin: auto;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    transition: ease 0.2s;
+  }
+  .item .item-image:hover{
+    opacity: 0.5;
+  }
+  .item .item-details{
+    margin-top: 0.625rem;
+    border-top: 1px solid #ededed;
+    padding: 0.375rem 0;
+    height: 2.813em
+  }
+  .item .item-name{
+    text-transform: uppercase;
+    color: #f48a18;
+    font-weight: bold;
+  }
+  .item .item-price{
+    color: #54504c;
+    float: right;
+    font-size: 0.875rem;
+  }
+  .show{
+    display: block !important;
+  }
+}
+@media (min-width: 992px) { 
+  .controls-bar h3{
+    margin-bottom: 0;
+  }
+  .controls-bar .products-filter{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+  }
+  .controls-bar .products-instock{
+    margin-right: 2.500rem;
+    padding-bottom: 0;
+  }
+  .categories-menu{
+    border-right: 1px solid  #ededed;
+  }
+}

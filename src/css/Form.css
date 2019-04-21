@@ -1,0 +1,41 @@
+.form-header h3{
+  text-transform: uppercase;
+}
+.form-content{
+  padding-bottom: 1rem;
+  margin-bottom: 1.875rem;
+  border-bottom: 1px solid #ededed;
+}
+.form-content input,
+.form-content select, 
+.form-content textarea{
+  width: 100%;
+  padding: 0.750rem 1.250rem;
+  margin: 0.500rem 0;
+  box-sizing: border-box;
+  border: 2px solid #ededed;
+  color:#555;
+}
+.form-content textarea{
+  height: 7.500rem;
+}
+.form-content input:focus,
+.form-content select:focus, 
+.form-content textarea:focus{
+  border: 2px solid #ffc688;
+  outline: none;
+}
+.form-footer{
+  text-align: right;
+  position: relative;
+}
+.form-footer .form-errors{
+  position: absolute;
+  width: 200px;
+  height: 1.250rem;
+  top: -1rem;
+  left: 0;
+  text-align: left;
+  color:#f44336;
+  font-weight: bold;
+}
