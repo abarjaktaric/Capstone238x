@@ -16,8 +16,14 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-6">
                             <nav className="footer-navigation">
+                                {/* rubric73 - Link to Home Page */}
+                                {/* rubric76 - on click take the user to Home page */}
                                 <Link to="/">Home</Link>
+                                {/* rubric74 - Link to About Page */}
+                                {/* rubric77 - on click take the user to About page */}
                                 <Link to="/about">About us</Link>
+                                {/* rubric75 - Link to Contact Page */}
+                                {/* rubric78 - on click take the user to Contact page */}
                                 <Link to="/contact">Contact us</Link>
                             </nav>
                         </div>

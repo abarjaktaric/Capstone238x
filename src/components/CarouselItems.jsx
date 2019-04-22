@@ -26,9 +26,10 @@ class CarouselItems extends Component {
       var styleItems = {
         backgroundImage: 'url('+item.imagelink+')'
       }
-
+      //* rubric01 - Displaying Slides from carouselItemsList array *//
       return (
         <div key={item.name} className="carousel-slide">
+          {/* rubric09 - Background product image as link background - on click display productDetail component */}
           <a href={'#/product?name=' + item.name} style={styleItems}> </a>
         </div>
       );

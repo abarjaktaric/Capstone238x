@@ -5,6 +5,7 @@
   margin-top: 0.625rem;
   display: inline-block;
 }
+
 .carousel{
   position: relative;
   margin-bottom: 3.750rem;
@@ -15,6 +16,7 @@
   overflow: hidden;
   height: 500px;     
 }
+/* rubric11 - slides wrapper style for animation */
 .carousel-wrapper{
   position: absolute;
   width: 100%;

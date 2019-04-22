@@ -1,9 +1,12 @@
 import React from 'react';
+
 import '../css/About.css';
+//* rubric79 - Used internal css *//
 
 const About = () => {
     return (
         <main>
+            {/* rubric63 - About page */}
             <div className="page about-page">
                 <div className="about-banner">
                     <div className="container">

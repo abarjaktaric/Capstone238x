@@ -46,8 +46,10 @@ class ShippingForm extends Component {
         var phone = this.state.phone;
         var numbers = /^[0-9]+$/;
         var total = this.total();
+        //* rubric51 - Alert based of input and total cost*//
         const alertMessage = 'Your Shipping Details:\n\nUsername - ' + username + '\nAddress - ' + address + '\nCity - ' + city + '\nPhone - ' + phone + '\nTotal - $' + total;
 
+        //* rubric52 - Form validation *//
         var errors = [];
         var showErrors = document.getElementById("shipping-errors");
 
@@ -71,31 +73,33 @@ class ShippingForm extends Component {
     render() {
         return (
             <section>
+                {/* rubric48 - Form  labeled enter shipping details*/}
                 <form className="form-shipping" onSubmit={this.handleSubmit}>
                     <div className="form-header">
                         <h3>Enter Shipping Details</h3>
                     </div>
                     <div className="form-content">
+                        {/* rubric48 - Form inputs with placeholders*/}
                         <input
-                            type="input"
+                            type="text"
                             name="username"
                             placeholder="Username"
                             value={this.state.username}
                             onChange={this.handleChange} />
                         <input
-                            type="input"
+                            type="text"
                             name="address"
                             placeholder="Address"
                             value={this.state.address}
                             onChange={this.handleChange} />
                         <input
-                            type="input"
+                            type="text"
                             name="city"
                             placeholder="City"
                             value={this.state.city}
                             onChange={this.handleChange} />
                         <input
-                            type="input"
+                            type="text"
                             name="phone"
                             placeholder="Phone"
                             value={this.state.phone}
@@ -103,6 +107,7 @@ class ShippingForm extends Component {
                     </div>
                     <div className="form-footer">
                         <div className="form-errors" id="shipping-errors"></div>
+                        {/* rubric50 - Checkout button */}
                         <button className="btn btn-primary right" type="submit">Checkout</button>
                     </div>
                 </form>

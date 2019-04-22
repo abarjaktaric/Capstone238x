@@ -9,6 +9,8 @@ class CartPrice extends Component {
         if(this.props.cart.length === 0 || typeof this.props.cart === 'undefined'){
             return pricing;
         } else {
+            //* rubric55 -update cost if quanity is changed *//
+            //* rubric53 - list items and their quantity from cart if items are removed or quantity change update cost *//
             for(let i = 0; i < this.props.cart.length; i++){
                 pricing.subtotal += this.props.cart[i][0].item.price * this.props.cart[i][1].quantity;
                 pricing.tax += this.props.cart[i][0].item.price * this.props.cart[i][1].quantity * 0.1;
@@ -25,7 +27,8 @@ class CartPrice extends Component {
     }
 
     render(){
-        return(                   
+        return( 
+            //* rubric49 - Showing subtotal cost, shipping, tax and total cost *//                  
             <div className="cart-price">
                 <div className="subtotal"><span>Subtotal :</span><span>${this.price().subtotal}</span></div>
                 <div className="shipping"><span>Shipping : </span><span>${this.price().shipping}</span></div>

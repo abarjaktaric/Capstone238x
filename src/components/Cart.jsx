@@ -4,7 +4,9 @@ import CartPrice from './CartPrice';
 import CartProducts from './CartProducts';
 
 import { connect } from 'react-redux';
+
 import '../css/Cart.css';
+//* rubric79 - Used internal css *//
 
 class Cart extends Component {
 
@@ -21,6 +23,7 @@ class Cart extends Component {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="cart-product">
+                                    {/* rubric47 - Table for displaying product image, name, unit price etc in cart */}
                                     <table>
                                         <thead>
                                             <tr>

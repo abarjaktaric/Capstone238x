@@ -16,13 +16,15 @@ class CartProducts extends Component {
 
         var newQuantity = parseInt(event.target.value);
         this.props.changeQuantity(Index, newQuantity);
+        //* rubric55 -  update cost  with new value of quantity *//
     }
 
     handleRemoveItem = (item, Index) => {
-
+       
         if (this.props.cart.length === 0 || typeof this.props.cart === 'undefined') {
             /*Your cart is empty"!*/
         } else {
+            //* rubric54 - remove item *//
             this.props.removeItem(item, Index);
         }
     }
@@ -31,11 +33,13 @@ class CartProducts extends Component {
         const cartProducts = this.props.cart.map((item, Index) => {
             var qty = item[1].quantity;
             return (
+                //* rubric47 - Table row for displaying product image, name, unit price etc in cart *//
                 <tr key={Index}>
                     <td className="product-tumb"><img src={item[0].item.imagelink} alt={item[0].item.name} /></td>
                     <td>{item[0].item.name}</td>
                     <td className="product-price">{item[0].item.price}</td>
                     <td>
+                        {/* rubric55 - on change quantity update cost */}
                         <input
                             type="number"
                             value={qty}
@@ -44,6 +48,7 @@ class CartProducts extends Component {
                             onChange={this.handleQuantity.bind(this, item, Index)} />
                     </td>
                     <td>{item[0].item.price}</td>
+                    {/* rubric54 - on click remove item from cart */}
                     <td><button onClick={this.handleRemoveItem.bind(this, item, Index)}><i className="fas fa-trash-alt"></i></button></td>
                 </tr>
             );

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchItems } from '../actions/postActions';
 import { addItem } from '../actions/addItem';
 import '../css/Shopping.css';
+//* rubric79 - Used internal css *//
 
 class Shopping extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class Shopping extends Component {
     let items = JSON.parse(JSON.stringify(this.props.activeItems.items));
 
     if (this.state.checked) {
+      //* rubric29 - Display only product that are in stock *//
       return this.sort(items.filter(item => item.stock !== "0"));
     } else {
       return this.sort(items);
@@ -40,6 +42,7 @@ class Shopping extends Component {
   }
 
   sort(items) {
+    //* rubric33 - sort function depend of selected *//
     if (this.state.sort === "none") {
       return items;
     } else if (this.state.sort === "price") {
@@ -56,6 +59,7 @@ class Shopping extends Component {
   }
 
   handleAddItem = (item) => {
+    //* rubric30 - add 1 unit of product in cart if product isnt in cart *//
     let quantity = 1;
     let addedItem = item.name;
     let existingItem = this.props.cart.find(item => item[0].item.name === addedItem);
@@ -70,25 +74,29 @@ class Shopping extends Component {
   }
 
   logger = (subcategory) => {
+    //* rubric26 - Fetch items from subcategory *//
     this.props.fetchItems(subcategory);
   }
 
   handleCategoryMenu = (category) => {
+    //* rubric25 - connectin dropdown with button, on click toggle class .show = display:block *//
     let categoryName = category.category;
     let categoryDropdown = document.getElementById(categoryName);
     categoryDropdown.classList.toggle("show");
   }
 
   render() {
-    
+    //* rubric19 - Listing categories and subcategories from data *//
     const categoryMenu = this.props.data.map((category, cIndex) => {
       return (
         <div key={cIndex} className="category-menu">
+          {/* rubric25 - Category name as button on click calling handlingCategoryMenu function */}
           <button onClick={this.handleCategoryMenu.bind(this, category)}>{category.category}</button>
           <ul id={category.category} className="dropdown-content">
             {
               category.subcategories.map((subcategory, sIndex) => {
                 return (
+                  //* rubric26 - On click subcategory call loger *//
                   <li key={sIndex} onClick={this.logger.bind(this, subcategory)}>{subcategory.name}</li>
                 )
               })
@@ -97,7 +105,7 @@ class Shopping extends Component {
         </div>
       );
     });
-
+    //* rubric20 - List all selected items in grid cell *//
     const listProducts = this.items().map((item, iIndex) => {
       var styleItem = {
         backgroundImage: 'url(' + item.imagelink + ')'
@@ -105,13 +113,21 @@ class Shopping extends Component {
       return (
         <div key={item.name} className="col-md-4">
           <div className="item">
+            {/* rubric21 - Name of product in grid cell as link */}
+            {/* rubric31 - on image click go to page Product details */}
+            {/* rubric46 - on image click direct to link : #product¨name=productname */}
             <a href={'#/product?name=' + item.name} className="item-image" style={styleItem}> </a>
             <div className="item-details">
+              {/* rubric23- Image of product in grid cell as link*/}
+              {/* rubric32 - on title click direct to link : #product¨name=productname */}
               <a href={'#/product?name=' + item.name}>
                 <span className="item-name">{item.name}</span>
               </a>
+              {/* rubric22 - Pricee of product in grid cell */}
               <span className="item-price">$ {item.price}</span>
             </div>
+            {/* rubric24 - Button labeled Add*/}
+            {/* rubric30 - on click call function handleAddItem */}
             <button className="btn btn-primary" onClick={this.handleAddItem.bind(this, item)}>Add</button>
           </div>
         </div>
@@ -124,17 +140,25 @@ class Shopping extends Component {
           <div className="container">
             <div className="row">
               <div className="col">
+                {/* rubric14 - Controls bar div */}
                 <div className="controls-bar">
+                  {/* rubric15 - Displayed selected category name in heading */}
+                  {/* rubric15 - Displayed selected subcategory name in heading */}
                   <h3>{this.props.activeItems.name}</h3>
+                  {/* rubric16 - Displayed number of shown items (via length) of total items in array */}
+                  {/* rubric28 - Displayed number are changing acording if In Stock Only is toggled */}
                   <span>{this.items().length} / {this.props.activeItems.items.length}</span>
                   <div className="products-filter">
                     <div className="products-instock">
+                      {/* rubric17 - In stock only  checkbox with label*/}
                       <label>In Stock Only
                         <input type="checkbox" checked={this.state.checked} onChange={this.inStock} />
                       </label>
                     </div>
                     <div className="products-sort">
+                      {/* rubric18 - Dropdown with options with label sort by  */}
                       <label>Sort by </label>
+                      {/* rubric33 - on select change call function handleSort */}
                       <select value={this.state.sort} placeholder="None" onChange={this.handleSort}>
                         <option value="none">None</option>
                         <option value="price">Price</option>
@@ -149,11 +173,13 @@ class Shopping extends Component {
             <div className="row">
               <div className="col-md-4">
                 <aside className="categories-menu">
+                  {/* rubric19 - Display Category Menu */}
                   {categoryMenu}
                 </aside>
               </div>
               <div className="col-md-8">
                 <div className="row">
+                  {/* rubric20 - Displaying items */}
                   {listProducts}
                 </div>
               </div>

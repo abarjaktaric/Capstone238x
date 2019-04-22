@@ -8,6 +8,7 @@ import MainLayout from './MainLayout';
 class App extends Component {
 
   componentWillMount() {
+    //* rubric81 - Data accessed via Azure API and added to store*//
     this.props.dispatch(fetchData());
   }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import queryString from 'query-string'
 import { addItem } from '../actions/addItem';
 import '../css/Product.css';
+//* rubric79 - Used internal css *//
 
 class ProductDetail extends Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class ProductDetail extends Component {
     }
 
     handleQuantity = (event) => {
+        //* rubric44 - change input quantity *//
         this.setState({ quantity: event.target.value })
     }
 
@@ -52,7 +54,7 @@ class ProductDetail extends Component {
         let quantity = parseInt(qty);
         let addedItem = item.name;
         let existingItem = this.props.cart.find(item => item[0].item.name === addedItem);
-
+        //* rubric44 - If product isnt in cart add it *//
         if (typeof existingItem == 'undefined') {
             this.props.addItem(item, quantity);
         } else if (existingItem[0].item.name !== addedItem) {
@@ -70,6 +72,8 @@ class ProductDetail extends Component {
                 <div className="page product-page">
                     <div className="page-header">
                         <div className="container">
+                            {/* rubric43 - Button labeled Back */}
+                            {/* rubric45 - on click go back */}
                             <button className="btn-back" onClick={this.props.history.goBack}>Back</button>
                         </div>
                     </div>
@@ -79,17 +83,24 @@ class ProductDetail extends Component {
                                 <div className="col-lg-6">
                                     <div className="product-img">
                                         <h2>{this.item().name}</h2>
+                                         {/* rubric36 - Image of selected product */}
                                         <img src={this.item().imagelink} alt={this.item().name} />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="product-details">
+                                        {/* rubric35 - Name of selected product */}
                                         <h2>{this.item().name}</h2>
+                                         {/* rubric37 - Rating of selected product */}
                                         <div className="product-raiting">Rating: <span>{this.item().rating}/5</span></div>
+                                         {/* rubric39 - Price of selected product */}
                                         <div className="product-price">$ {this.item().price}</div>
+                                         {/* rubric38 - Number of items in stock of selected product */}
                                         <div className="product-stock"> number of items in stock: {this.item().stock}</div>
+                                         {/* rubric40 - Description of selected product */}
                                         <div className="product-description">{this.item().description}</div>
                                         <div className="product-quantity">
+                                         {/* rubric42 -  Input labeled Qty*/}
                                             <label>Qty:&nbsp;
                                                 <input
                                                     type="number"
@@ -99,6 +110,8 @@ class ProductDetail extends Component {
                                                     onChange={this.handleQuantity.bind(this)} />
                                             </label>
                                         </div>
+                                        {/* rubric41 - Button labeled Add */}
+                                        {/* rubric44 - on click add item in cart with quantity selected in input */}
                                         <button className="btn btn-primary" onClick={this.handleAddItem.bind(this, this.item(), qty)}>Add</button>
                                     </div>
                                 </div>
